@@ -1,0 +1,236 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_margin="20dp"
+	android:orientation="vertical">
+
+	<!-- TextView here -->
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:text="Owner: "
+				android:textSize="16sp" />
+
+			<TextView
+				android:id="@+id/tvOwner"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="---"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:text="Status: "
+				android:textSize="16sp" />
+
+			<TextView
+				android:id="@+id/tvStatus"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="Waiting for keys"
+				android:textSize="16sp" />
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<TextView
+				android:layout_width="80dp"
+				android:layout_height="wrap_content"
+				android:text="Buffer: "
+				android:textSize="16sp" />
+
+			<TextView
+				android:id="@+id/tvBuffer"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:text="---"
+				android:textSize="16sp" />
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<!-- ListView here -->
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:gravity="center"
+		android:text="MESSAGES"
+		android:textAllCaps="true"
+		android:textSize="18sp"
+		android:textStyle="bold" />
+
+	<ListView
+		android:id="@+id/listMessages"
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp"
+		android:scrollbars="vertical">
+
+	</ListView>
+
+	<!-- CheckBox here -->
+
+	<!-- EditText and Button here -->
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:gravity="center"
+		android:text="MANAGE YOUR KEYS"
+		android:textAllCaps="true"
+		android:textSize="18sp"
+		android:textStyle="bold" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Button
+				android:id="@+id/btnNewKeyPair"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.3"
+				android:text="NEW" />
+
+			<Button
+				android:id="@+id/btnSetKeys"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.30"
+				android:enabled="false"
+				android:text="OK"
+				android:textAllCaps="true" />
+
+			<Button
+				android:id="@+id/btnShowMyPublicKeyQRCode"
+				android:layout_width="wrap_content"
+				android:layout_height="match_parent"
+				android:layout_weight="0.3"
+				android:enabled="false"
+				android:text="SHOW QR" />
+
+			<Button
+				android:id="@+id/btnCopyKeyPairToClipboard"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="0.3"
+				android:enabled="false"
+				android:text="COPY" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<EditText
+				android:id="@+id/editTextMyKeyPair"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_weight="1"
+				android:ems="10"
+				android:hint="Enter your key or generate a new one"
+				android:inputType="text"
+				android:minHeight="48dp" />
+
+		</LinearLayout>
+	</LinearLayout>
+
+	<TextView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_margin="16dp"
+		android:gravity="center"
+		android:text="START TALKING"
+		android:textAllCaps="true"
+		android:textSize="18sp"
+		android:textStyle="bold" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<Spinner
+				android:id="@+id/spinnerDestination"
+				android:layout_width="225dp"
+				android:layout_height="wrap_content"
+				android:dropDownWidth="wrap_content"
+				android:minHeight="48dp" />
+
+			<Button
+				android:id="@+id/btnAddNewContactFromQRCodeScan"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:text="ADD" />
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="horizontal">
+
+			<EditText
+				android:id="@+id/editTextMessageText"
+				android:layout_width="225dp"
+				android:layout_height="wrap_content"
+				android:enabled="true"
+				android:hint="Say something nice"
+				android:imeOptions="actionNext"
+				android:inputType="text"
+				android:minHeight="48dp" />
+
+			<Button
+				android:id="@+id/btnSendMessage"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:enabled="true"
+				android:text="SEND"
+				android:textAllCaps="true" />
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
